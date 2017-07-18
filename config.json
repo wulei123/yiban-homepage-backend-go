@@ -1,0 +1,14 @@
+{
+  "server_port": 8080,
+  "admins":[
+    {
+      "username":"admin",
+      "password":"admin"
+    },{
+      "username":"root",
+      "password":"root"
+    }
+  ],
+  "image_url":"./",
+  "session_secret":"my-secret"
+}
