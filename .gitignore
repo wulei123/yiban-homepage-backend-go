@@ -20,3 +20,5 @@ gen### Go template
 
 *_data*.json
 *data_*.json
+*.png
+*.jpg

@@ -174,14 +174,14 @@ func HandleFileUpload(w http.ResponseWriter, r *http.Request){
 		defer file.Close()
 		//fmt.Fprintf(w, "%v", handler.Header)
 		newFileName := time.Now().Format("2006-01-02_15_04_05")+handler.Filename
-		f, err := os.OpenFile(configuration.ImageUrl+newFileName, os.O_WRONLY|os.O_CREATE, 0666)
+		f, err := os.OpenFile(configuration.ImageUrlServer+newFileName, os.O_WRONLY|os.O_CREATE, 0666)
 		if err != nil{
 			fmt.Printf("打开文件失败 : %v\n",err)
 			return
 		}
 		defer f.Close()
 		io.Copy(f,file)
-		fmt.Fprintf(w,`{"code":6,"message":"图片上传成功","image_url":"%s"}`,newFileName)
+		fmt.Fprintf(w,`{"code":6,"message":"图片上传成功","image_url":"%s"}`,configuration.ImageUrlFront+newFileName)
 	}
 }
 func main(){
@@ -193,7 +193,7 @@ func main(){
 	//http.HandleFunc("/test/cookie",testCookie)
 	//http.HandleFunc("/test/session",testSession)
 	log.Printf("启动服务 : localhost%s\n",configuration.ServerPort)
-	log.Printf("图片存储目录 : %s\n",configuration.ImageUrl)
+	log.Printf("图片存储目录 : %s\n",configuration.ImageUrlServer)
 	err := http.ListenAndServe(configuration.ServerPort, nil)
 	if err != nil{
 		log.Printf("服务启动失败 : %v \n", err)

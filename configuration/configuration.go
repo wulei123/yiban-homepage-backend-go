@@ -12,7 +12,8 @@ import (
 type Conf struct {
 	ServerPort int `json:"server_port"`
 	Admins []Admin `json:"admins"`
-	ImageUrl string `json:"image_url"`
+	ImageUrlServer string `json:"image_url_server"`
+	ImageUrlFront string `json:"image_url_front"`
 	SessionSecret string `json:"session_secret"`
 	DataUrl string `json:"data_url"`
 }
@@ -24,7 +25,8 @@ type Admin struct {
 var (
 	ServerPort string
 	Admins map[string]string
-	ImageUrl string
+	ImageUrlServer string
+	ImageUrlFront string
 	SessionSecret string
 	DataUrl string
 )
@@ -55,7 +57,8 @@ func init(){
 	for _,admin := range conf.Admins{
 		Admins[admin.Username] = admin.Password
 	}
-	ImageUrl = conf.ImageUrl
+	ImageUrlServer = conf.ImageUrlServer
+	ImageUrlFront = conf.ImageUrlFront
 	SessionSecret = conf.SessionSecret
 	DataUrl = conf.DataUrl
 	log.Println("配置文件加载成功")
