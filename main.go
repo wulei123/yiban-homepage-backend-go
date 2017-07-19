@@ -7,10 +7,12 @@ import (
 	"encoding/json"
 	"github.com/gorilla/sessions"
 	"fmt"
+	"os"
+	"time"
 )
-
+var Data_Origin_Path = configuration.DataUrl + "data_copy.json"
 type NoticesStruct struct{
-	Carousels [6]Carousel `json:"carousel"`
+	Carousels [6]Carousel `json:"carousels"`
 	Notice1 Notice `json:"notice_1"`
 	Notice2 Notice `json:"notice_2"`
 }
@@ -20,8 +22,8 @@ type Notice struct {
 	Content [6]NoticeContent `json:"content"`
 }
 type NoticeContent struct {
-	Content string `json:"content"`
-	Url 	string `json:"url"`
+	Text string `json:"text"`
+	Href 	string `json:"href"`
 }
 type Carousel struct {
 	Name string `json:"name"`
@@ -92,6 +94,17 @@ func CheckLogin(w http.ResponseWriter, r *http.Request){
 	}
 }
 
+func pathExists(path string) (bool, error) {
+	_, err := os.Stat(path)
+	if err == nil {
+		return true, nil
+	}
+	if os.IsNotExist(err) {
+		return false, nil
+	}
+	return false, err
+}
+
 func FormSubmit(w http.ResponseWriter, r *http.Request){
 	allowCORS(w)
 	CheckLogin(w,r)
@@ -102,6 +115,32 @@ func FormSubmit(w http.ResponseWriter, r *http.Request){
 		fmt.Fprintf(w,`{"code":4,"message":"解析失败","error":%v}`,err)
 	}
 	fmt.Println(data)
+	bd,err := json.Marshal(data)
+	if err != nil{
+		log.Printf("save failed : %v\n",err)
+		return
+	}
+	exist, err := pathExists(Data_Origin_Path)
+	if exist{
+		newPath := fmt.Sprintf("%s%v_data.json",configuration.DataUrl,time.Now().Format("2006-01-02_15_04_05"))
+		err = os.Rename(Data_Origin_Path,newPath)
+		if err != nil{
+			log.Printf("save failed : %v\n",err)
+			return
+		}
+	}
+
+	df, err := os.OpenFile(Data_Origin_Path, os.O_WRONLY|os.O_CREATE, 0666)
+	if err != nil{
+		log.Printf("save failed : %v\n",err)
+		return
+	}
+	defer df.Close()
+	_ , err = df.Write(bd)
+	if err != nil{
+		log.Printf("save failed : %v\n",err)
+		return
+	}
 }
 
 func main(){

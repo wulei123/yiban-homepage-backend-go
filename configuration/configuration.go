@@ -14,6 +14,7 @@ type Conf struct {
 	Admins []Admin `json:"admins"`
 	ImageUrl string `json:"image_url"`
 	SessionSecret string `json:"session_secret"`
+	DataUrl string `json:"data_url"`
 }
 type Admin struct {
 	Username string `json:"username"`
@@ -25,6 +26,7 @@ var (
 	Admins map[string]string
 	ImageUrl string
 	SessionSecret string
+	DataUrl string
 )
 
 func init(){
@@ -55,5 +57,6 @@ func init(){
 	}
 	ImageUrl = conf.ImageUrl
 	SessionSecret = conf.SessionSecret
+	DataUrl = conf.DataUrl
 	log.Println("配置文件加载成功")
 }

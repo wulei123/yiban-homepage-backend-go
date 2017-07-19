@@ -10,5 +10,6 @@
     }
   ],
   "image_url":"./",
-  "session_secret":"my-secret"
+  "session_secret":"my-secret",
+  "data_url":"./"
 }
