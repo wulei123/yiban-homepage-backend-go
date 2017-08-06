@@ -16,6 +16,7 @@ type Conf struct {
 	ImageUrlFront string `json:"image_url_front"`
 	SessionSecret string `json:"session_secret"`
 	DataUrl string `json:"data_url"`
+	CrossOrigin string `json:"cross_origin"`
 }
 type Admin struct {
 	Username string `json:"username"`
@@ -29,6 +30,7 @@ var (
 	ImageUrlFront string
 	SessionSecret string
 	DataUrl string
+	CrossOrigin string
 )
 
 func init(){
@@ -61,5 +63,6 @@ func init(){
 	ImageUrlFront = conf.ImageUrlFront
 	SessionSecret = conf.SessionSecret
 	DataUrl = conf.DataUrl
+	CrossOrigin = conf.CrossOrigin
 	log.Println("配置文件加载成功")
 }

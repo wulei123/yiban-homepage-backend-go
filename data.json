@@ -4,32 +4,32 @@
       {
         "name": "1",
         "href": "http://www.yiban.cn/forum/article/show/channel_id/70922/puid/5370538/group_id/0/article_id/22465551",
-        "src": "/static/media/c1.4f8fc2a2.jpg"
+        "src": "/images/c1.4f8fc2a2.jpg"
       },
       {
         "name": "2",
         "href": "http://www.yiban.cn/forum/article/show/channel_id/70922/puid/5370538/group_id/0/article_id/22613969",
-        "src": "/static/media/c2.c2f3f44b.jpg"
+        "src": "/images/c2.c2f3f44b.jpg"
       },
       {
         "name": "3",
         "href": "http://www.yiban.cn/forum/schoolAd/articleShow/id/578371",
-        "src": "/static/media/c3.ce36f01e.jpg"
+        "src": "/images/c3.ce36f01e.jpg"
       },
       {
         "name": "4",
         "href": "http://www.yiban.cn/forum/article/show/channel_id/70922/puid/5370538/group_id/0/article_id/24338043",
-        "src": "/static/media/4.f59c68de.jpg"
+        "src": "/images/4.f59c68de.jpg"
       },
       {
         "name": "5",
         "href": "http://www.yiban.cn/forum/article/show/channel_id/70922/puid/5370538/group_id/0/article_id/24189215",
-        "src": "/static/media/5.200411ca.jpg"
+        "src": "/images/5.200411ca.jpg"
       },
       {
         "name": "6",
         "href": "http://www.yiban.cn/forum/article/show/channel_id/70922/puid/5370538/group_id/0/article_id/24323645",
-        "src": "/static/media/6.bf306922.jpg"
+        "src": "/images/6.bf306922.jpg"
       }
     ],
     "notice_1": {
@@ -96,210 +96,210 @@
       {
         "name": "二手市场",
         "href": "https://www.yiban.cn/Org/orglistShow/type/forum/puid/5370538#2761",
-        "icon": "../../assets/icon/易社区/二手市场.jpg"
+        "icon": "/images/易社区/二手市场.jpg"
       },
       {
         "name": "竞赛活动",
         "href": "https://www.yiban.cn/Org/orglistShow/type/forum/puid/5370538#397",
-        "icon": "../../assets/icon/易社区/二手市场.jpg"
+        "icon": "/images/易社区/二手市场.jpg"
       },
       {
         "name": "就业求职",
         "href": "https://www.yiban.cn/Org/orglistShow/type/forum/puid/5370538#3158",
-        "icon": "../../assets/icon/易社区/二手市场.jpg"
+        "icon": "/images/易社区/二手市场.jpg"
       },
       {
         "name": "人物访谈",
         "href": "https://www.yiban.cn/Org/orglistShow/type/forum/puid/5370538#2723",
-        "icon": "../../assets/icon/易社区/二手市场.jpg"
+        "icon": "/images/易社区/二手市场.jpg"
       },
       {
         "name": "通知公告",
         "href": "https://www.yiban.cn/Org/orglistShow/type/forum/puid/5370538#391",
-        "icon": "../../assets/icon/易社区/二手市场.jpg"
+        "icon": "/images/易社区/二手市场.jpg"
       },
       {
         "name": "校生互动",
         "href": "https://www.yiban.cn/Org/orglistShow/type/forum/puid/5370538#599",
-        "icon": "../../assets/icon/易社区/二手市场.jpg"
+        "icon": "/images/易社区/二手市场.jpg"
       },
       {
         "name": "心灵随想",
         "href": "https://www.yiban.cn/Org/orglistShow/type/forum/puid/5370538#399",
-        "icon": "../../assets/icon/易社区/二手市场.jpg"
+        "icon": "/images/易社区/二手市场.jpg"
       },
       {
         "name": "新闻快讯",
         "href": "https://www.yiban.cn/Org/orglistShow/type/forum/puid/5370538#393",
-        "icon": "../../assets/icon/易社区/二手市场.jpg"
+        "icon": "/images/易社区/二手市场.jpg"
       },
       {
         "name": "领航工程",
         "href": "https://www.yiban.cn/org/orglistShow/type/forum/puid/5370538#2761",
-        "icon": "../../assets/icon/易社区/二手市场.jpg"
+        "icon": "/images/易社区/二手市场.jpg"
       }
     ],
     [
       {
         "name": "石大讲座网",
-        "href": "http://i.upc.edu.cn/dcp/forward.action?path=dcp/core/appstore/menu/jsp/redirect&appid=43013&ac=3",
-        "icon": "../../assets/icon/易社区/二手市场.jpg"
+        "href": "http:/i.upc.edu.cn/dcp/forward.action?path=dcp/core/appstore/menu/jsp/redirect&appid=43013&ac=3",
+        "icon": "/images/易社区/二手市场.jpg"
       },
       {
         "name": "石大云课堂",
-        "href": "http://i.upc.edu.cn/dcp/forward.action?path=dcp/core/appstore/menu/jsp/redirect&appid=40516&ac=3",
-        "icon": "../../assets/icon/易社区/竞赛活动.jpg"
+        "href": "http:/i.upc.edu.cn/dcp/forward.action?path=dcp/core/appstore/menu/jsp/redirect&appid=40516&ac=3",
+        "icon": "/images/易社区/竞赛活动.jpg"
       },
       {
         "name": "四六级报名",
-        "href": "http://i.upc.edu.cn/dcp/forward.action?path=dcp/core/appstore/menu/jsp/redirect&appid=10116&ac=7",
-        "icon": "../../assets/icon/易社区/就业求职.jpg"
+        "href": "http:/i.upc.edu.cn/dcp/forward.action?path=dcp/core/appstore/menu/jsp/redirect&appid=10116&ac=7",
+        "icon": "/images/易社区/就业求职.jpg"
       },
       {
         "name": "题库",
         "href": "http://www.yiban.cn/t/index/",
-        "icon": "../../assets/icon/易社区/人物访谈.jpg"
+        "icon": "/images/易社区/人物访谈.jpg"
       },
       {
         "name": "我的图书馆",
-        "href": "http://i.upc.edu.cn/dcp/forward.action?path=dcp/core/appstore/menu/jsp/redirect&appid=1186&ac=3",
-        "icon": "../../assets/icon/易社区/通知公告.jpg"
+        "href": "http:/i.upc.edu.cn/dcp/forward.action?path=dcp/core/appstore/menu/jsp/redirect&appid=1186&ac=3",
+        "icon": "/images/易社区/通知公告.jpg"
       },
       {
         "name": "易查询",
         "href": "http://yb.upc.edu.cn:8081/",
-        "icon": "../../assets/icon/易社区/校生互动.jpg"
+        "icon": "/images/易社区/校生互动.jpg"
       },
       {
         "name": "易打印",
         "href": "http://www.yiban.cn/File/print/index",
-        "icon": "../../assets/icon/易社区/心灵随想.jpg"
+        "icon": "/images/易社区/心灵随想.jpg"
       },
       {
         "name": "资料库",
         "href": "http://www.yiban.cn/i/a/",
-        "icon": "../../assets/icon/易社区/新闻快讯.jpg"
+        "icon": "/images/易社区/新闻快讯.jpg"
       }
     ],
     [
       {
         "name": "网薪商城",
         "href": "http://eshop.yiban.cn/?access_token=7c8e4cd012a8287becfee48a8094db70&v_time=14931980191726%23/home#/home",
-        "icon": "../../assets/icon/易社区/二手市场.jpg"
+        "icon": "/images/易社区/二手市场.jpg"
       },
       {
         "name": "相册",
         "href": "http://www.yiban.cn/album/web/index",
-        "icon": "../../assets/icon/易社区/就业求职.jpg"
+        "icon": "/images/易社区/就业求职.jpg"
       },
       {
         "name": "一卡通自助服务平台",
         "href": "http://card.upc.edu.cn/Login.aspx",
-        "icon": "../../assets/icon/易社区/通知公告.jpg"
+        "icon": "/images/易社区/通知公告.jpg"
       },
       {
         "name": "易博客",
         "href": "https://www.yiban.cn/my/publishblog",
-        "icon": "../../assets/icon/易社区/心灵随想.jpg"
+        "icon": "/images/易社区/心灵随想.jpg"
       },
       {
         "name": "易动态",
         "href": "https://www.yiban.cn/my/feed",
-        "icon": "../../assets/icon/易学习/石大讲座网.png"
+        "icon": "/images/易学习/石大讲座网.png"
       },
       {
         "name": "易投票",
         "href": "https://www.yiban.cn/my/publishvote",
-        "icon": "../../assets/icon/易学习/四六级考试报名.png"
+        "icon": "/images/易学习/四六级考试报名.png"
       },
       {
         "name": "易问卷",
         "href": "https://www.yiban.cn/questionnaire/index/edit",
-        "icon": "../../assets/icon/易学习/我的图书馆.png"
+        "icon": "/images/易学习/我的图书馆.png"
       },
       {
         "name": "迎新系统",
         "href": "http://yb.upc.edu.cn/welcome/",
-        "icon": "../../assets/icon/易学习/易打印.jpg"
+        "icon": "/images/易学习/易打印.jpg"
       },
       {
         "name": "通讯录",
         "href": "http://yb.upc.edu.cn/project/tongxunlu/",
-        "icon": "../../assets/icon/易生活/网薪商城.jpg"
+        "icon": "/images/易生活/网薪商城.jpg"
       },
       {
         "name": "舌尖上的石大",
         "href": "http://yb.upc.edu.cn/project/deliciousfood/",
-        "icon": "../../assets/icon/易生活/相册.jpg"
+        "icon": "/images/易生活/相册.jpg"
       },
       {
         "name": "生活查询",
         "href": "http://yb.upc.edu.cn/project/ShowTime/",
-        "icon": "../../assets/icon/易生活/易博客.jpg"
+        "icon": "/images/易生活/易博客.jpg"
       }
     ],
     [
       {
         "name": "辅导员评价",
         "href": "http://f.yiban.cn/iapp116335",
-        "icon": "../../assets/icon/易社区/二手市场.jpg"
+        "icon": "/images/易社区/二手市场.jpg"
       },
       {
         "name": "教务系统",
-        "href": "http://i.upc.edu.cn/dcp/forward.action?path=dcp/core/appstore/menu/jsp/redirect&appid=1180&ac=3",
-        "icon": "../../assets/icon/易社区/人物访谈.jpg"
+        "href": "http:/i.upc.edu.cn/dcp/forward.action?path=dcp/core/appstore/menu/jsp/redirect&appid=1180&ac=3",
+        "icon": "/images/易社区/人物访谈.jpg"
       },
       {
         "name": "就业信息",
         "href": "http://career.upc.edu.cn/",
-        "icon": "../../assets/icon/易社区/心灵随想.jpg"
+        "icon": "/images/易社区/心灵随想.jpg"
       },
       {
         "name": "石大云盘",
-        "href": "http://i.upc.edu.cn/dcp/forward.action?path=dcp/core/appstore/menu/jsp/redirect&appid=41568&ac=1",
-        "icon": "../../assets/icon/易学习/石大云课堂.png"
+        "href": "http:/i.upc.edu.cn/dcp/forward.action?path=dcp/core/appstore/menu/jsp/redirect&appid=41568&ac=1",
+        "icon": "/images/易学习/石大云课堂.png"
       },
       {
         "name": "物资借用",
         "href": "http://yb.upc.edu.cn/project/borrowmaterial/",
-        "icon": "../../assets/icon/易学习/我的图书馆.png"
+        "icon": "/images/易学习/我的图书馆.png"
       },
       {
         "name": "易抽奖",
         "href": "http://yb.upc.edu.cn:8080/",
-        "icon": "../../assets/icon/易学习/资料库.jpg"
+        "icon": "/images/易学习/资料库.jpg"
       },
       {
         "name": "易抽签",
         "href": "http://yb.upc.edu.cn/project/ballot/#/",
-        "icon": "../../assets/icon/易生活/相册.jpg"
+        "icon": "/images/易生活/相册.jpg"
       },
       {
         "name": "易签到",
         "href": "http://yb.upc.edu.cn:8082/",
-        "icon": "../../assets/icon/易生活/易动态.jpg"
+        "icon": "/images/易生活/易动态.jpg"
       }
     ],
     [
       {
         "name": "快搭使用帮助",
         "href": "http://q.yiban.cn/faq/index",
-        "icon": "../../assets/icon/易社区/二手市场.jpg"
+        "icon": "/images/易社区/二手市场.jpg"
       },
       {
         "name": "易班开放平台",
         "href": "https://o.yiban.cn/",
-        "icon": "../../assets/icon/易社区/通知公告.jpg"
+        "icon": "/images/易社区/通知公告.jpg"
       },
       {
         "name": "易班使用指南",
         "href": "http://yb.upc.edu.cn/project/ybjieshao/",
-        "icon": "../../assets/icon/易学习/石大讲座网.png"
+        "icon": "/images/易学习/石大讲座网.png"
       },
       {
         "name": "易文档",
         "href": "http://yb.upc.edu.cn/project/yitext/#/",
-        "icon": "../../assets/icon/易学习/我的图书馆.png"
+        "icon": "/images/易学习/我的图书馆.png"
       }
     ]
   ]
