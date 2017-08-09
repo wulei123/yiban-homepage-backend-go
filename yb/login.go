@@ -1,7 +1,7 @@
 package yb
 
 import (
-	"fmt"
+	"log"
 	"net/http/cookiejar"
 	"net/url"
 	"encoding/json"
@@ -9,6 +9,7 @@ import (
 	"net/http"
 	"github.com/PuerkitoBio/goquery"
 	"errors"
+	"fmt"
 )
 
 const (
@@ -35,7 +36,6 @@ func getLoginPage(login_page_url string) *http.Response{
 c := &http.Client{}
 req, _ := http.NewRequest("GET",login_page_url,nil)
 res, _ := c.Do(req)
-fmt.Printf("%v\n",res.Cookies())
 return res
 }
 func getDataKeysAndKeysTime(res *http.Response) (data_keys string, data_keys_time string, err error){
@@ -56,10 +56,7 @@ func CheckLogin(c *http.Client) bool{
 	var checkLoginMsg CheckLoginMsg
 	res, _ := c.Get("http://www.yiban.cn/ajax/my/getLogin")
 	data , _ := ioutil.ReadAll(res.Body)
-	fmt.Printf("%v\n", string(data))
-	fmt.Printf("%v\n", c.Jar)
 	json.Unmarshal([]byte(data),&checkLoginMsg)
-	fmt.Printf("%v\n",checkLoginMsg)
 	return checkLoginMsg.Data.IsLogin
 }
 func Login (account string,password string) *http.Client{
@@ -67,7 +64,7 @@ func Login (account string,password string) *http.Client{
 	res := getLoginPage(login_page_url)
 	data_keys , data_keys_time , err:= getDataKeysAndKeysTime(res)
 	if err != nil{
-		fmt.Printf("%v\n",err)
+		log.Printf("%v\n",err)
 		return c
 	}
 	pwdRsa := RsaEncrypt([]byte(password),[]byte(data_keys))
@@ -89,10 +86,6 @@ func Login (account string,password string) *http.Client{
 	if err != nil{
 		fmt.Printf("error :%v",err)
 	}
-	fmt.Printf("%v\n",msg)
-	data, _ := ioutil.ReadAll(response.Body)
 	response.Body.Close()
-	fmt.Println(string(data))
-	fmt.Printf("%v\n",response.Header)
 	return c
 }

@@ -23,7 +23,7 @@ UPC易班后端
          "cross_origin":"http://localhost:8086",//允许跨域的前端origin
          "account":"user",//用来扒取数据的公共账号
          "password":"pwd",//用来爬取数据的公共账号密码
-         "interval_hours":12//
+         "interval_hours":12//爬取的时间间隔
        }
 
 ```

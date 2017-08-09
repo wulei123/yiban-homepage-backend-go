@@ -5,7 +5,6 @@ import (
 	"encoding/json"
 	"../ybtempl"
 	"github.com/PuerkitoBio/goquery"
-	"fmt"
 )
 
 const (
@@ -29,12 +28,14 @@ func getSchoolIntro(c *http.Client) (schoolIntro ybtempl.SchoolIntroTempl){
 	temp = temp.ChildrenFiltered(".member-total")
 	schoolIntro.Members= getMembers(temp)
 	schoolIntro.Group = FetchMyGroup(c)
-	fmt.Printf("%v", schoolIntro)
 	return schoolIntro
 }
 func FetchMyGroup(c *http.Client) (group ybtempl.GroupTempl) {
 	res, _ := c.Get(my_school_url)
 	decoder := json.NewDecoder(res.Body)
 	decoder.Decode(&group)
+	for i := range group.Data{
+		group.Data[i].Url = "http://www.yiban.cn/Newgroup" + group.Data[i].Url
+	}
 	return group
 }

@@ -181,8 +181,6 @@ func main(){
 	http.HandleFunc("/homepage/login/check",CheckLogin)
 	http.HandleFunc("/homepage/data",DataSubmit)
 	http.HandleFunc("/homepage/image",HandleFileUpload)
-	//http.HandleFunc("/test/cookie",testCookie)
-	//http.HandleFunc("/test/session",testSession)
 	log.Printf("启动服务 : localhost%s\n",configuration.ServerPort)
 	log.Printf("图片存储目录 : %s\n",configuration.ImageUrlServer)
 	log.Printf("数据存储目录 : %s\n",configuration.DataUrl)

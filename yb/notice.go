@@ -3,7 +3,6 @@ package yb
 import (
 	"net/http"
 	"github.com/PuerkitoBio/goquery"
-	"fmt"
 	"../configuration"
 	"../ybtempl"
 	"io/ioutil"
@@ -19,14 +18,11 @@ func getNotices(c *http.Client,get_url string)[]ybtempl.NoticeContent{
 	var notices []ybtempl.NoticeContent
 	res,_ := c.Get(get_url)
 	doc ,_ :=goquery.NewDocumentFromResponse(res)
-	println("***********************************************************************")
 	doc.Find(".fl .title").Each(func(i int, a *goquery.Selection){
 		href, _ := a.Attr("href")
 		content := a.Text()
 		temp := ybtempl.NoticeContent{Text:content,Href:href}
 		notices = append(notices, temp)
-		fmt.Printf("href : %s\n",href)
-		fmt.Printf("content : %s\n",content)
 	})
 	return notices
 }
