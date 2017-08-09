@@ -7,6 +7,7 @@ import (
 	"io/ioutil"
 	"encoding/json"
 	"fmt"
+	"time"
 )
 
 type Conf struct {
@@ -17,6 +18,9 @@ type Conf struct {
 	SessionSecret string `json:"session_secret"`
 	DataUrl string `json:"data_url"`
 	CrossOrigin string `json:"cross_origin"`
+	Account string `json:"account"`
+	Password string `json:"password"`
+	IntervalHours time.Duration `json:"interval_hours"`
 }
 type Admin struct {
 	Username string `json:"username"`
@@ -31,6 +35,9 @@ var (
 	SessionSecret string
 	DataUrl string
 	CrossOrigin string
+	Account string
+	Password string
+	IntervalHours time.Duration
 )
 
 func init(){
@@ -64,5 +71,8 @@ func init(){
 	SessionSecret = conf.SessionSecret
 	DataUrl = conf.DataUrl
 	CrossOrigin = conf.CrossOrigin
+	Account = conf.Account
+	Password = conf.Password
+	IntervalHours = conf.IntervalHours
 	log.Println("配置文件加载成功")
 }

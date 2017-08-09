@@ -2,6 +2,8 @@ package main
 
 import (
 	"./configuration"
+	"./ybtempl"
+	"./yb"
 	"log"
 	"net/http"
 	"encoding/json"
@@ -11,37 +13,10 @@ import (
 	"time"
 	"io"
 	"github.com/gorilla/context"
+	"io/ioutil"
 )
-var Data_Origin_Path = configuration.DataUrl + "data.json"
-var Image_Url_Front = configuration.ImageUrlFront
-type NoticesStruct struct{
-	Carousels []Carousel `json:"carousels"`
-	Notice1 Notice `json:"notice_1"`
-	Notice2 Notice `json:"notice_2"`
-}
+var Data_Origin_Path = configuration.DataUrl
 
-type Notice struct {
-	Title string `json:"title"`
-	Content [6]NoticeContent `json:"content"`
-}
-type NoticeContent struct {
-	Text string `json:"text"`
-	Href string `json:"href"`
-}
-type Carousel struct {
-	Name string `json:"name"`
-	Href string `json:"href"`
-	Src string `json:"src"`
-}
-type App struct {
-	Name string `json:"name"`
-	Href string `json:"href"`
-	Icon string `json:"icon"`
-}
-type Data struct {
-	Notices NoticesStruct `json:"notices"`
-	Apps [5][]App `json:"apps"`
-}
 var store = sessions.NewCookieStore([]byte("my-secret"))
 func allowCORS(w http.ResponseWriter){
 	w.Header().Set("Access-Control-Allow-Origin", configuration.CrossOrigin)
@@ -129,26 +104,40 @@ func DataSubmit(w http.ResponseWriter, r *http.Request){
 	allowCORS(w)
 	if login,_ := checkLogin(w,r);login == true{
 		decoder := json.NewDecoder(r.Body)
-		var data Data
+		var data ybtempl.YBData
+		var oldData ybtempl.YBData
 		err := decoder.Decode(&data)
 		if err != nil{
 			fmt.Fprintf(w,`{"code":4,"message":"解析失败","error":%v}`,err)
 		}
 		//setImageFrontUrl(&data)
 		//fmt.Println(data)
+		//|-----------------------------------------------------------|
+		//等待测试
+		odf , err := ioutil.ReadFile(configuration.DataUrl)
+		json.Unmarshal(odf,&oldData)
+		ybtempl.AssignNoticesAndApps(&oldData,&data)
+		data = oldData
 		bd,err := json.Marshal(data)
+		//|-----------------------------------------------------------|
+
 		if err != nil{
 			log.Printf("save failed : %v\n",err)
 			return
 		}
 		exist, err := pathExists(Data_Origin_Path)
 		if exist{
-			newPath := fmt.Sprintf("%s%v_data.json",configuration.DataUrl,time.Now().Format("2006-01-02_15_04_05"))
+			fileInfo, err := os.Stat(configuration.DataUrl)
+			if err != nil{
+				log.Printf("check file information failed : %v\n",err)
+			}
+			newPath := fmt.Sprintf("%s%v_data.json",configuration.DataUrl,fileInfo.ModTime().Format("2006-01-02_15_04_05"))
 			err = os.Rename(Data_Origin_Path,newPath)
 			if err != nil{
 				log.Printf("save failed : %v\n",err)
 				return
 			}
+
 		}
 		df, err := os.OpenFile(Data_Origin_Path, os.O_WRONLY|os.O_CREATE, 0666)
 		if err != nil{
@@ -187,7 +176,7 @@ func HandleFileUpload(w http.ResponseWriter, r *http.Request){
 	}
 }
 func main(){
-
+	go yb.UpdateYBData()
 	http.HandleFunc("/homepage/login",Login)
 	http.HandleFunc("/homepage/login/check",CheckLogin)
 	http.HandleFunc("/homepage/data",DataSubmit)
@@ -197,29 +186,5 @@ func main(){
 	log.Printf("启动服务 : localhost%s\n",configuration.ServerPort)
 	log.Printf("图片存储目录 : %s\n",configuration.ImageUrlServer)
 	log.Printf("数据存储目录 : %s\n",configuration.DataUrl)
-	err := http.ListenAndServe(configuration.ServerPort, context.ClearHandler(http.DefaultServeMux))
-	if err != nil{
-		log.Printf("服务启动失败 : %v \n", err)
-		return
-	}
+	log.Fatal(http.ListenAndServe(configuration.ServerPort, context.ClearHandler(http.DefaultServeMux)))
 }
-
-//func testSession(w http.ResponseWriter, r *http.Request){
-//	allowCORS(w)
-//	sess, err := store.New(r,"JsSession")
-//	if err != nil{
-//		log.Println(err)
-//	}
-//	sess.Values["login"] = true
-//	sess.Save(r,w)
-//	//sess := session.GobalSessions.SessionStart(w,r)
-//	//sess.Set("username","sdffsfds")
-//}
-//func testCookie (w http.ResponseWriter, r *http.Request){
-//	allowCORS(w)
-//	//fmt.Println(r.Cookie("username"))
-//	expiration := time.Now()
-//	expiration = expiration.AddDate(1,0,0)
-//	cookie := http.Cookie{Name: "username", Value: "astaxie", Expires: expiration}
-//	http.SetCookie(w,&cookie)
-//}

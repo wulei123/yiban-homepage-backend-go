@@ -1,0 +1,20 @@
+{
+  "server_port": 8080,
+  "admins":[
+    {
+      "username":"admin",
+      "password":"admin"
+    },{
+      "username":"root",
+      "password":"root"
+    }
+  ],
+  "image_url_server":"E:\\projects\\yiban-homepage\\images\\",
+  "session_secret":"my-secret",
+  "data_url":"E:\\projects\\yiban-homepage\\backend\\data_copy.json",
+  "image_url_front":"http://localhost:8086/images/",
+  "cross_origin":"http://localhost:8086",
+  "account":"user",
+  "password":"pwd",
+  "interval_hours":12
+}
