@@ -9,7 +9,7 @@ import (
 
 const teachers_url = "http://www.yiban.cn/school/getTeacherAjax?id=5370538&page="
 func getTeachers(c *http.Client) ( teachers []ybtempl.TeacherTempl){
-	i := 0
+	i := 1
 	for {
 		var teacher ybtempl.TeacherTempl
 		res, _ := c.Get(fmt.Sprintf("%s%d",teachers_url,i))

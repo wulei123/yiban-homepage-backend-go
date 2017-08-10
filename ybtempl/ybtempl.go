@@ -59,7 +59,7 @@ type GroupData struct {
 	Label string `json:"label"`
 	Top string `json:"top"`
 	IsMember int `json:"isMember"`
-	Avatar string `json:"avatar"`
+	Avatar string `json:"avater"`
 	Url string `json:"url"`
 }
 type TeacherTempl struct {
